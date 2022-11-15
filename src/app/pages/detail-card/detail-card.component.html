@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="detail-card mt-4 mb-4" *ngIf="card$ | async as card">
+        <div class="top">
+            <img [src]="card.card_images[0].image_url" alt="">
+        </div>
+        <div class="bottom">
+            <h2 style="text-align: center;">{{ card.name }}</h2>
+            <div class="item">
+                <p>{{ card.desc }}</p>
+            </div>
+
+            <div class="item">
+                <div class="item__desc">
+                    <h3 class="title">Atake</h3>
+                    <p>{{ card.atk || '-' }}</p>
+                </div>
+                <div class="item__desc">
+                    <h3 class="title">Defensa</h3>
+                    <p>{{ card.def || '-' }}</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item__desc">
+                    <h3 class="title">Atributo</h3>
+                    <p>{{ card.attribute || '-' }}</p>
+                </div>
+                <div class="item__desc">
+                    <h3 class="title">Tipo</h3>
+                    <p>{{ card.type }}</p>
+                </div>
+                <div class="item__desc">
+                    <h3 class="title">SubTipo</h3>
+                    <p>{{ card.race }}</p>
+                </div>
+            </div>
+
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Market</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let market of card.card_prices[0] | keyvalue">
+                        <th scope="row">{{ market.key | marketName }}</th>
+                        <td>{{ market.value | currency }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Yu-Gi-Oh-CardsApp';
+  imgYuGi = "assets/images/1.png";
+
+  ngOnInit() {
+    this.getYuGiImg();
+  }
+
+  getYuGiImg() {
+    let random = Math.random() * 11 + 1;
+    random = Math.floor(random);
+    this.imgYuGi = `assets/images/${random}.png`;
+  }
 }

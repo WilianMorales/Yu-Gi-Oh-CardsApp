@@ -1,0 +1,32 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+  
+.content {
+    margin: 0;
+    background-color: #f8f9fa;
+    color: white;
+    flex: 1;
+    position: relative;
+  
+    .yugi-img{
+      position: fixed;
+      bottom: 1em;
+      right: 1em;
+
+      &:hover {
+        opacity: 0.3;
+      }
+    }
+}
+
+@media screen and (max-width: 576px) {
+  .content {
+    .yugi-img {
+      width: 140px;
+      height: 140px;
+    }
+  }
+}

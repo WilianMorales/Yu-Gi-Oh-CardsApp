@@ -1,0 +1,26 @@
+.logo {
+    text-align: center;
+}
+
+.list {
+    margin: auto;
+    margin-top: 2em;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
+    gap: 0.8em;
+    margin: 2em;
+}
+
+@media screen and (max-width: 576px) {
+    .logo img {
+        width: 70%;
+        height: 80px;
+    }
+
+    .list {
+        width: 95%;
+    }
+}
